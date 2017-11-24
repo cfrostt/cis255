@@ -1,0 +1,53 @@
+<!doctype html>
+<html ng-app="app4" ng-cloak>
+  <head>
+    <title>AngularJS Tutorial 4</title>
+    <style>
+    [ng\:cloak], [ng-cloak], .ng-cloak {
+      display: none;
+    }
+    .bluetext {
+      color:blue;
+    }
+    .boldtext {
+      font-weight: bold;
+    }
+    .stripedblue {
+      color:#007FFF;
+      background-color:#DBE9F4;
+    }
+    .stripedbeige {
+      color:#CC0000;
+      background-color:#F5F5DC;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- AngularJS can respond to events -->
+    <div ng-controller="eventCtrl">
+      <!-- ng-change requires ng-model -->
+      <input />
+
+      <!-- We can disable and inable elements -->
+      <p>
+        <button ng-disabled="disableButton">Button</button>
+      </p>
+
+	
+	<!-- We can bind classes on even elements with ng-class-even and/or ng-class-odd -->
+    <table>
+      <tr ng-repeat="course in courses" ng-class="{stripedbeige: course.courseNumber % 2 != 0, stripedblue: course.courseNumber % 2 == 0}">
+        <td>{{course.prefix}}</td>
+        <td>{{course.courseNumber}}</td>
+      </tr>
+    </table>
+	
+	</div>
+
+    <!-- Load the AngularJS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+
+    <!-- Load the JS Module -->
+    <script src="angulartut4.js"></script>
+  </body>
+</html>

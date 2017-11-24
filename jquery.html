@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<!-- adapted from: http://www.jquerybyexample.net/2017/10/remove-html-table-row-and-column-using.html 
+see also:
+http://www.jquerybyexample.net/2013/04/direct-vs-delegated-events-with-jquery-on-method.html
+-->
+<!--
+1. include jQuery CDN
+2. insert HTML table
+3. insert CSS
+4. add scripts at end of body section to implement tutorial
+4a. remove row from table, plain vanilla
+4b. remove row from table, with animation (fade)
+4c. remove row from table, using button (uses "delegate event approach")
+5. remove column from table by clicking header
+assignment...
+* for 3 points: write a jquery script to add a column of insert action buttons, with input functionality (buttons insert rows of dummy data prior to the row clicked)
+* for 2 points: write a jquery script to add a column of "insert" action buttons, without any functionality
+* for 1 point: Implement the code as shown in jquerybyexample tutorial
+-->
+<html>
+	<head>
+		<title>cis255 - jQuery - Remove HTML Table Row</title>
+		<link rel="icon" href="../cardinal_logo.png" type="image/png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+		<style>
+			table {
+			  font-family: arial, sans-serif;
+			  border-collapse: collapse;
+			  width: 50%;
+			}
+			td,
+			th {
+			  border: 1px solid #dddddd;
+			  text-align: left;
+			  padding: 8px;
+			}
+			th {
+			  background-color: #ccd;
+			}
+			tr:nth-child(even) {
+			  background-color: #dddddd;
+			}
+			tr:nth-child(odd) {
+			  background-color: #ddeedd;
+
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>cis255 - jQuery - Remove HTML Table Row</h1>
+			<h2>HTML Markup</h2>
+			<p>To get started, create a standard HTML table on the page. For this demo, our table has 3 columns: Name, Age and Country (along with some random data). The table row/column will be deleted upon click of the row/column itself.<p>
+			<br />
+			<table id="tblData">
+				<tbody>
+					<tr>
+						<th>Name</th>
+						<th>Age</th>
+						<th>Country</th>
+						<th>Delete</th>
+						<th>Insert</th>
+					</tr>
+					<tr>
+						<td>Maria Anders</td> 
+						<td>30</td>
+						<td>Germany</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Francisco Chang</td>
+						<td>24</td>
+						<td>Mexico</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Roland Mendel</td>
+						<td>100</td>
+						<td>Austria</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Helen Bennett</td>
+						<td>28</td>
+						<td>UK</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Yoshi Tannamuri</td>
+						<td>35</td>
+						<td>Canada</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Giovanni Rovelli</td>
+						<td>46</td>
+						<td>Italy</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr>
+						<td>Alex Smith</td>
+						<td>59</td>
+						<td>USA</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr>
+					<tr1>
+						<td>Alex Test</td>
+						<td>59</td>
+						<td>USA</td>
+						<td><input class="delete" type="button" value="Delete" /></td>
+					</tr1>
+					
+				</tbody>
+			</table>
+			
+		</div>
+		<script>
+		$(document).ready(function() {
+
+		
+			// remove row from table, plain vanilla
+			/*
+			$("#tblData tr:has(td)").click(function(.delete) {
+				$(this).remove();
+			});
+			*/
+			
+			// remove row from table, with animation (fade)
+			/*
+			$("#tblData tr:has(td)").click(function() {
+				$(this).fadeOut(500, function() {
+					$(this).remove();
+				});
+			});
+			*/
+
+			// remove row from table, using button (uses "delegate event approach")
+			
+			$('#tblData').on('click', '.delete', function() {
+				$(this).closest('tr').remove();
+			});
+			
+			/*
+			// remove column from table by clicking header
+			$("#tblData tr:has(th)").mouseover(function(e) {
+				$(this).css("cursor", "pointer");
+			});
+			$("#tblData th").click(function() {
+				var iIndex = $(this).closest("th").prevAll("th").length;
+				$(this).parents("#tblData").find("tr").each(function() {
+					$(this).find("td:eq(" + iIndex + ")").remove();
+					$(this).find("th:eq(" + iIndex + ")").remove();
+				});
+			});
+			*/
+
+			$('table').find('tr').each(function(){
+				$(this).find('td').eq(3).after('<td><input class="insert" type="button" value="Insert" /></td>');	
+			});
+			$('#tblData').on('click', '.insert', function() {
+				$(this).closest('tr').append("<tr><td>footer information</td></tr>");
+			});
+
+		}); // end $(document).ready(function() {
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
