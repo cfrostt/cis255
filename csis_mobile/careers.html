@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>SVSU - Computer Science</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="presetstyle.css" rel="stylesheet">
+    
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="hy-drawer.js"></script>
+
+    <style>.hy-drawer-content { color:#fff; background:#0769ad; } aside a { color: #fff; }</style>
+	<style>
+	.img-hor {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+	</style>
+
+  </head>
+  <body>
+  
+    <div class="wrapper">
+
+		<header>
+        <a id="menuEl" href="#drawerEl" style="float:left; color:white;line-width:5px;><span class="sr-only"></span></a>
+			SVSU CSIS Dept.
+		</header>
+<!--<a><img src="svsu_banner.png" style="width: 1000; height: 70px;></a>-->
+
+	    <h2><span style="font-size: 28px">Career Opportunities</span></h2>
+		<p><span style="font-size: 16px;">
+			Where do our graduates go after graduation?
+		</p>
+		<p>
+			Some students go on to complete graduate work and earn master’s degrees and Ph.D.s.  Our programs prepare students for grad school if that’s what they are interested in.  
+			Many have pursued graduate degrees at institutions in the state such as Michigan State University, Oakland University, The University of Michigan and Central Michigan University.  
+			Others have gone on to schools in other states and done very well.
+		</p>
+		<p><span style="font-size: 12px;">
+			For the majority of our students, they decide to enter the workforce after graduation.  Our name is recognized as producing skilled employees…a fact that we are very proud of.  
+			In fact many local and regional employers return to SVSU year after year to hire our Computer Science and Information System student graduates.
+		</span></p>
+		<p>
+			Our students have even successfully started their own companies right after graduating from SVSU!
+		</p>
+		<p><span style="font-size: 12px;">
+			 Some will work for local companies such as
+		</span><p>
+		<ul><ul><span style="font-size: 13px;">
+			<li>Saginaw Tooling Systems</li><br>
+			<li>The Saginaw Intermediate School District</li><br>
+			<li>SVSU</li><br>
+			<li>Delta College</li><br>
+			<li>Mahar Tools</li><br>
+			<li>...and many others</li>
+		</span></ul></ul>
+		<p><span style="font-size: 12px;">
+			 Regional employers attract others, like
+		</span></p>
+		<ul><ul><span style="font-size: 13px;">
+			<li>Auto Owners Insurance</li><br>
+			<li>Frankenmuth Mutual Insurance</li><br>
+			<li>Covenant Healthcare</li><br>
+			<li>Rehmann Group</li><br>
+			<li>McLaren Health Care Corporation</li><br>
+			<li>Ascension Health</li><br>
+			<li>Yeo & Yeo</li><br>
+			<li>...among others</li>
+		</span></ul></ul>
+		<p>
+			Others even make careers immediately at multinational corporations including
+		</p>
+		<ul><ul><span style="font-size: 13px;">
+			<li>Dow Chemical</li><br>
+			<li>IBM</li><br>
+			<li>Dow Corning</li><br>
+			<li>General Motors</li><br>
+			<li>Electronic Data Systems</li><br>
+			<li>KPMG</li><br>
+			<li>Deloitte & Touche</li>
+		
+		<p><span style="font-size: 12px;">
+				... and yes, even Microsoft
+		</span></p>
+		</span></ul></ul>
+		<br><br>
+		<aside id="drawerEl" data-prevent-default="true" data-mouse-events="true">
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="mission.html">Mission Statement</a></li>
+			<li><a href="requirements.html">Program Requirements</a></li>
+			<li><a href="coursesequence.html">Course Sequence</a></li>
+			<li><a href="cscoursesequence.html">CS Course Sequence</a></li>
+			<li><a href="mscis.html">Master of Computer Science and Information Systems</a></li>
+			<li><a href="careers.html">Careers</a></li>
+			<li><a href="faculty.html">Faculty</a></li>
+			<li><a href="collegeofset.html">College of Science, Engineering and Technology</a></li>
+			<li><a href="cis.html">CIS</a></li>
+			<li><a href="whystudycsis.html">Why study CSIS?</a></li>
+			<li><a href="ouralumni.html">Our Alumni</a></li>
+		  </ul>
+		</aside>
+    </div> <!-- end wrapper -->
+	<footer>
+	<img src="cardinal_2.png">
+	<a href="index.html"><span style="vertical-align:top;text-align:center;line-height:45px; color:white;">Go Cardinals!</span></a>
+	 <img src="cardinal_2.png" class="img-hor">
+	</footer>
+
+    <script>
+      var ua = navigator.userAgent.toLowerCase();
+      var isSafari = ua.indexOf('safari') > 0 && ua.indexOf('chrome') < 0;
+      var isMobileSafari = isSafari && ua.indexOf('mobile') > 0;
+
+      $('#drawerEl').drawer({
+        range: isMobileSafari ? [35, 150] : [0, 150],
+        threshold: isSafari ? 0 : 10,
+      })
+      .on('transitioned.hy.drawer', function(e) {
+        console.log('hy-drawer transitioned to', e.detail);
+      });
+
+      $('#menuEl').click(function (e) {
+        e.preventDefault();
+        $('#drawerEl').drawer('toggle');
+      });
+
+    </script>
+
+
+	</body>
+  
+</html>

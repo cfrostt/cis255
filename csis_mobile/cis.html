@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>SVSU - Computer Science</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="presetstyle.css" rel="stylesheet">
+    
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="hy-drawer.js"></script>
+
+    <style>.hy-drawer-content { color:#fff; background:#0769ad; } aside a { color: #fff; }</style>
+	<style>
+	.img-hor {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+	</style>
+
+  </head>
+  <body>
+  
+    <div class="wrapper">
+
+		<header>
+        <a id="menuEl" href="#drawerEl" style="float:left; color:white;line-width:5px;><span class="sr-only"></span></a>
+			SVSU CSIS Dept.
+		</header>
+<!--<a><img src="svsu_banner.png" style="width: 1000; height: 70px;></a>-->
+
+	    <h2><span style="font-size: 28px">Computer Information Systems</span></h2>
+		<p>
+			The Computer Information Systems program and Computer Science program share many of the same core classes to ensure that students are adequately prepared with the necessary background 
+			for their upper class studies.  This common core includes programming both in a Windows graphical environment as well as in a Unix command-line environment.  Industry uses both operating 
+			systems and so the Department wants students to be well versed in each area.  Additionally, students will learn C++ and Microsoft Visual Basic as toolsets to develop applications.  The common 
+			core also includes introductory data structures, statistics with computer applications, web client development and web server development.  Both majors are heavily programming-oriented.  
+			The curriculum has been designed this way on purpose so that students can learn about a concept and then use their programming knowledge as a vehicle to understand, experiment and implement that topic. 
+			Both programs do a great job in preparing students for their future in industry or to pursue a graduate degree
+		</p>
+		<p>
+			Computer Information Systems tends to be more application oriented than Computer Science and geared toward application development with some business emphasis.  Computer Information Systems majors 
+			will see the following in their degree program:
+		</p>
+		<ul><ul><span style="font-size: 13px;">
+			<li>Topical Coverage Synopsis: Models, technologies, systems and E-business strategies that are crucial in today’s businesses</li><br>
+			<li>Cutting-edge technology skills and knowledge:</li><br>
+			<ul><span style="font-size: 13px; list-style-type:circle;">
+			<li>Application Areas: Data Communications, Database, e-Commerce, .NET development</li><br>
+			<li>Technical Topics: system integration & management, systems design and analysis, enterprise database systems & transaction processing and much more</li><br>
+		</span></ul>
+		</span></ul></ul>
+
+
+		<br><br>
+		<aside id="drawerEl" data-prevent-default="true" data-mouse-events="true">
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="mission.html">Mission Statement</a></li>
+			<li><a href="requirements.html">Program Requirements</a></li>
+			<li><a href="coursesequence.html">Course Sequence</a></li>
+			<li><a href="cscoursesequence.html">CS Course Sequence</a></li>
+			<li><a href="mscis.html">Master of Computer Science and Information Systems</a></li>
+			<li><a href="careers.html">Careers</a></li>
+			<li><a href="faculty.html">Faculty</a></li>
+			<li><a href="collegeofset.html">College of Science, Engineering and Technology</a></li>
+			<li><a href="cis.html">CIS</a></li>
+			<li><a href="whystudycsis.html">Why study CSIS?</a></li>
+			<li><a href="ouralumni.html">Our Alumni</a></li>
+		  </ul>
+		</aside>
+    </div> <!-- end wrapper -->
+	<footer>
+	<img src="cardinal_2.png">
+	<a href="index.html"><span style="vertical-align:top;text-align:center;line-height:45px; color:white;">Go Cardinals!</span></a>
+	 <img src="cardinal_2.png" class="img-hor">
+	</footer>
+
+    <script>
+      var ua = navigator.userAgent.toLowerCase();
+      var isSafari = ua.indexOf('safari') > 0 && ua.indexOf('chrome') < 0;
+      var isMobileSafari = isSafari && ua.indexOf('mobile') > 0;
+
+      $('#drawerEl').drawer({
+        range: isMobileSafari ? [35, 150] : [0, 150],
+        threshold: isSafari ? 0 : 10,
+      })
+      .on('transitioned.hy.drawer', function(e) {
+        console.log('hy-drawer transitioned to', e.detail);
+      });
+
+      $('#menuEl').click(function (e) {
+        e.preventDefault();
+        $('#drawerEl').drawer('toggle');
+      });
+
+    </script>
+
+
+	</body>
+  
+</html>

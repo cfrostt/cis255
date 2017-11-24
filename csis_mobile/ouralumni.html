@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <title>SVSU - Computer Science</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Noto+Sans:400,400i,700,700i" rel="stylesheet">
+	<link href="presetstyle.css" rel="stylesheet">
+    
+	<link href="style.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="hy-drawer.js"></script>
+
+    <style>.hy-drawer-content { color:#fff; background:#0769ad; } aside a { color: #fff; }</style>
+
+	<style>
+	.img-hor {
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+	</style>
+
+  </head>
+  <body>
+  
+    <div class="wrapper">
+
+		<header>
+        <a id="menuEl" href="#drawerEl" style="float:left; color:white;line-width:5px;><span class="sr-only"></span></a>
+			SVSU CSIS Dept.
+		</header>
+<!--<a><img src="svsu_banner.png" style="width: 1000; height: 70px;></a>-->
+
+	    <h2><span style="font-size: 28px">Jesse Vollmar & Brad Koch-Home grown success</span></h2>
+		<p>
+			Brad Koch, 2011, B.S., and Jesse Vollmar, 2011, B.S., weren’t typical college students. As incoming freshmen at SVSU, the two were already running a successful IT consulting business. 
+			Since their 2011 graduation, both with a Bachelor of Science in computer science, they’ve also “graduated” from their initial business and have started a new company, FarmLogs, 
+			which has attracted a lot of investor interest as well as $5 million in venture capital.
+		</p>
+		<img src="farmlogs.jpg" style="Padding: 0px 0px 0px 25px">
+		<p>
+			"Proximity was a key factor [in choosing SVSU]." Jesse said. The financial assistance each received was also helpful. As co-valedictorians of their graduating class at Union-Sebewaing 
+			High School in Michigan’s Thumb, both received the President’s Scholarship at SVSU, which covered their tuition and select fees for four years. 
+		</p>
+		<p>
+			“Brad and I started our company in high school,” Jesse said, “and it was taking off. I knew I wanted to continue operating it while obtaining a degree, so moving [too far] away [from home] wasn’t an option. SVSU was in the right place.”
+		   	 Brad agreed, adding that the scholarship gave them the financial security to channel more effort into their business. 
+			“We were able to learn while working,” he said. “And we could apply things we were learning to actual clients.”
+		</p>
+		<h3>Seed of an Idea</h3>
+		<p>
+			Having grown up in farming communities, Brad and Jesse were familiar with the challenges farmers face, including a lack of technological sophistication in agriculture generally. While their IT consulting business was successful, 
+			both Jesse and Brad recognized they could do more. “With our consulting business, we were building software for an agricultural client,” Brad said. “We realized there was a huge need in the agricultural sector and nobody 
+			was building software for farmers.”
+		</p>
+		<p>
+			“The light bulb moment came at my family’s farm,” Jesse added. “I was in the office, and another farmer asked me if we were ready with our software. We weren’t even creating software yet, but that was the moment we decided we could make it successful.”
+			“It” would be FarmLogs, a web application for farm management. Jesse said he and Brad “daydreamed” about the project for about six months before they began working on the app. The product and the process were made better after participating in Y Combinator, 
+			a program that provides seed money, advice, networking and guidance to business startups, especially those in the technology sector.
+		</p>
+		<p>
+			“We went full-scale into FarmLogs on Jan. 3, 2012, the first day of Y Combinator,” Jesse said. From there, the product and the business grew nicely, and today the app is being used by farmers.
+		</p>
+		<p>
+			From their company headquarters in Ann Arbor, Brad and Jesse see a future ripe with possibility. “Ag needs data technology,” Brad said. “Existing players weren’t providing it. We’re here to make sure that changes; we’re bringing people the software they need.”
+			“There are decades of innovation to be built,” added Jesse. “We’ll be working on FarmLogs for a very long time.”
+		</p>
+		
+		<br><br>
+		<aside id="drawerEl" data-prevent-default="true" data-mouse-events="true">
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About Us</a></li>
+			<li><a href="news.html">News</a></li>
+			<li><a href="mission.html">Mission Statement</a></li>
+			<li><a href="requirements.html">Program Requirements</a></li>
+			<li><a href="coursesequence.html">Course Sequence</a></li>
+			<li><a href="cscoursesequence.html">CS Course Sequence</a></li>
+			<li><a href="mscis.html">Master of Computer Science and Information Systems</a></li>
+			<li><a href="careers.html">Careers</a></li>
+			<li><a href="faculty.html">Faculty</a></li>
+			<li><a href="collegeofset.html">College of Science, Engineering and Technology</a></li>
+			<li><a href="cis.html">CIS</a></li>
+			<li><a href="whystudycsis.html">Why study CSIS?</a></li>
+			<li><a href="ouralumni.html">Our Alumni</a></li>
+		  </ul>
+		</aside>
+    </div> <!-- end wrapper -->
+	<footer>
+	<img src="cardinal_2.png">
+	<a href="index.html"><span style="vertical-align:top;text-align:center;line-height:45px; color:white;">Go Cardinals!</span></a>
+	 <img src="cardinal_2.png" class="img-hor">
+	</footer>
+
+    <script>
+      var ua = navigator.userAgent.toLowerCase();
+      var isSafari = ua.indexOf('safari') > 0 && ua.indexOf('chrome') < 0;
+      var isMobileSafari = isSafari && ua.indexOf('mobile') > 0;
+
+      $('#drawerEl').drawer({
+        range: isMobileSafari ? [35, 150] : [0, 150],
+        threshold: isSafari ? 0 : 10,
+      })
+      .on('transitioned.hy.drawer', function(e) {
+        console.log('hy-drawer transitioned to', e.detail);
+      });
+
+      $('#menuEl').click(function (e) {
+        e.preventDefault();
+        $('#drawerEl').drawer('toggle');
+      });
+
+    </script>
+
+
+	</body>
+  
+</html>
